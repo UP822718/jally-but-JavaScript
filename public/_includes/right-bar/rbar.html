@@ -1,0 +1,49 @@
+<aside class="o-section">
+  <div class="o-section-inner o-section-inner--rightBlock">
+    {%- for rbar in page.rbar %}
+
+    {% if rbar == 'snemovna' %}
+      {% include "right-bar/bar_snemovna.html" %}
+    {% endif %}
+    {% if rbar == 'foto' %}
+      {% include "right-bar/bar_foto.html" %}
+    {% endif %}
+    {% if rbar == 'foto' %}
+      {% include "right-bar/bar_person_contact.html" %}
+    {% endif %}
+    {% if rbar == 'program_item' %}
+      {% include "right-bar/bar_program_item.html" %}
+    {% endif %}
+    {% if rbar == 'team-summary' %}
+      {% include "right-bar/bar_teams_summary.html" %}
+    {% endif %}
+    {% if rbar == 'teams-toc' %}
+      {% include "right-bar/bar_teams_toc.html" %}
+    {% elsif rbar == 'toc' %}
+      {% include "right-bar/bar_toc.html" %}
+    {% endif %}
+      {% include "right-bar/bar_program.html" %}
+    {% if rbar == 'cal' %}
+      {% include "right-bar/bar_cal.html" %}
+    {% endif %}
+    {% if rbar == 'people' %}
+      {% include "right-bar/bar_people.html" %}
+    {% endif %}
+    {% if rbar == 'video' %}
+      {% include "right-bar/bar_video.html" %}
+    {% endif %}
+    {% if rbar == 'fb' %}
+      {% include "right-bar/bar_fb.html" %}
+    {% endif %}
+    {% if rbar == 'tw' %}
+      {% include "right-bar/bar_tw.html" %}
+    {% endif %}
+    {% if rbar == 'otevrenost' %}
+      {% include "right-bar/bar_otevrenost.html" %}
+    {% endif %}
+    {% if rbar == 'slovensko' %}
+      {% include "right-bar/bar_slovensko.html" %}
+    {% endif %}
+{%- endfor%}
+  </div>
+</aside>

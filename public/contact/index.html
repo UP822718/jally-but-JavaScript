@@ -1,0 +1,125 @@
+---
+layout: default
+---
+
+<div class="row o-section-block o-section-block--divided">
+  <div class="medium-12 large-12 columns">
+    <section class="o-section">
+      <div class="o-section-inner">
+        <main class="o-section-block">
+          <!-- Article -->
+          <article itemtype="http://schema.org/BlogPosting" class="c-BasicPage" itemscope="">
+            <!--<link itemprop="mainEntityOfPage" href="http://insertshownpagelinkhere.com">-->
+            <header class="c-BasicPage-header c-BasicPage-header--horizontal">
+              <h1 itemprop="headline" class="c-BasicPage__title"> Contact Information </h1>
+            </header>
+            <div class="o-section-block o-section-block--fill">
+              <div class="u-cf">
+                <div class="medium-12 large-7 columns o-section-mediumdown-divided-small">
+                  <div class="c-BasicPage-content">
+                    <h2>Summary Information</h2>
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td class="cell-description">
+                            <i class="cell-icon fa fa-university"></i>
+                            <span class="cell-text">Official Name</span>
+                          </td>
+                          <td>Pirate Party UK</td>
+                        </tr>
+                        <tr>
+                          <td class="cell-description">
+                            <i class="cell-icon fa fa-desktop"></i>
+                            <span class="cell-text">Online Contact - General Enquiries</span>
+                          </td>
+                          <td>
+                            <a href="mailto:info@pirateparty.org.uk">info@pirateparty.org.uk</a> (email)
+                            <br>
+                            <a href="https://discord.pirateparty.org.uk/">Chat to us on Discord</a></td>
+                        </tr>
+                        <tr>
+                          <td class="cell-description">
+                            <i class="cell-icon fa fa-envelope"></i>
+                            <span class="cell-text">Telephone (intermittent response)</span>
+                          </td>
+                          <td> +44 XXX XXXXX </td>
+                        </tr>
+                        <tr>
+                          <td class="cell-description">
+                            <i class="cell-icon fa fa-gear"></i>
+                            <span class="cell-text">IT Issues etc.</span>
+                          </td>
+                          <td>
+                            <a href="mailto:webteam@pirateparty.org.uk">webteam@pirateparty.org.uk</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="cell-description">
+                            <i class="cell-icon fa fa-globe"></i>
+                            <span class="cell-text">International Team</span>
+                          </td>
+                          <td>
+                            <a href="mailto:international@pirateparty.org.uk">international@pirateparty.org.uk</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="cell-description">
+                            <i class="cell-icon fa fa-desktop"></i>
+                            <span class="cell-text">Web Address</span>
+                          </td>
+                          <td>
+                            <a href="https://www.pirateparty.org.uk">www.pirateparty.org.uk</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="cell-description">
+                            <i class="cell-icon fa fa-university"></i>
+                            <span class="cell-text">Registered Address</span>
+                          </td>
+                          <td>Unit 6941,
+                          <br>PO Box 4336,
+                          <br>Manchester,
+                          <br>M61 0BW</td>
+                        </tr>
+                        <tr>
+                          <td class="cell-description">
+                            <i class="cell-icon fa fa-university"></i>
+                            <span class="cell-text">Electoral Commission
+                            <br>Registriation Number</span>
+                          </td>
+                          <td> PP770 </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </main>
+      </div>
+    </section>
+  </div>
+</div>
+<hr>
+<div class="row o-section-block o-section-block--divided">
+  <div class="medium-12 large-12 columns">
+    <section class="o-section o-section--spaceBot">
+      <div class="o-section-inner">
+        <div class="o-section-block">
+          <div class="c-BasicPage">
+            <div class="c-BasicPage-content">
+              <h2>Media Contacts</h2>
+                {% assign team = site.people | where_exp:"item","item.categories contains 'mo-contact'"  | sort:"ordkontakty" %}
+                {% include "people/list-2col.html" param=team %}
+              <br>
+              <h2>All other Enquiries</h2>
+                {% assign team = site.people | where_exp:"item","item.categories contains 'ao-contact'" | sort:"ordkontakty" %}
+                {% include "people/list-2col.html" param=team %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

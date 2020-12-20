@@ -1,0 +1,21 @@
+Activity Streams
+ActivityPub
+Compound Document Format
+JSON-LD
+Linked Data Notifications
+Micropub
+Simple Knowledge Organization System
+Synchronized Multimedia Integration Language
+SOAP
+Subresource Integrity
+Scalable Vector Graphics
+SCXML
+Shapes Constraint Language
+Web Services Description Language
+Webmention
+
+IndieAuth
+
+CURIE
+InkML
+Extensible Forms Description Language

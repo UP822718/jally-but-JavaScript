@@ -1,0 +1,115 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Pirate Party UK
+email: webteam@pirateparty.org.uk
+description: Website for the UK Pirate Party, a centrist party focusing on Digital Rights and Freedom.
+keywords: Pirate, Pirate Party, Party, PPUK, PP, United Kingdom, Politics, Digital Rights, Digital Freedom.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.pirateparty.org.uk" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+paginate_path: "/news/:num/"
+paginate: 11
+
+exclude:
+  - readme.md
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - bower.json
+  - gulpfile.js
+  - node_modules
+  - bower_components
+  - vendor
+
+sass:
+    style: compressed
+
+permalink: /article/:title.html
+collections:
+  people:
+    output: true
+    permalink: /people/:path/
+  policy:
+    output: true
+    permalink: /policy/:path/
+  branches:
+    output: true
+    permalink: /branches/:path/
+
+defaults:   # defaults values for collection scope
+  -
+    scope:
+      path: "_people"
+    values:
+      layout: "page"
+      rbar: "people, foto"
+  -
+    scope:
+      path: "_policy"
+    values:
+      layout: "page"
+      rbar: "program"
+  -
+    scope:
+      path: "_program/psp2017"
+    values:
+      layout: "page"
+      rbar: "program program_item"
+  -
+    scope:
+      path: "_teams"
+    values:
+      layout: "team"
+      rbar: "team-summary, teams-toc"
+  -
+    scope:
+      path: "_branches"
+    values:
+      layout: "page"
+      rbar: "program"
+  -
+    scope:
+      path: "_elections"
+    values:
+      layout: "kandidatka"
+
+calendar: https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=500&amp;wkst=2&amp;hl=cs&amp;bgcolor=%23FFFFFF&amp;src=kddvdvu3adcjef2kro4j6mm838%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Europe%2FPrague
+fb: https://www.facebook.com/piratepartyuk/
+tw: piratepartyuk
+
+title-page:
+  big:
+    foto: /assets/img/miscellaneous/you-can.png
+    alt: policy
+    url: policy
+  left-top:
+    text: Branches
+    url: branches
+    icon: fa fa-map-signs
+  right-top:
+    text: Our People
+    url: people
+    icon: fa fa-users
+  left-bottom:
+    text: Join
+    url: join-us
+    icon: fa fa-gift u-rotate-5 fa-5x u-rotate-345
+  right-bottom:
+    text: Our Beliefs
+    url: policy
+    icon: fa fa-newspaper-o u-rotate-345
+
+emptyArray: []

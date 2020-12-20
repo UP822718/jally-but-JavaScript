@@ -1,0 +1,6 @@
+
+steps:
+- name: gordonmleigh/jekyll-cloud-builder:latest
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: gsutil
+  args: ["-m", "rsync", "-r", "-c", "-d", "./_site", "gs://staging.pirateparty.org.uk"]

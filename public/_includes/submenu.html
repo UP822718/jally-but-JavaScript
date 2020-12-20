@@ -1,0 +1,42 @@
+<nav class="c-top-sub-nav u-center-860-down">
+  <div class="row">
+    <div class="c-top-sub-nav-inner">
+      <div class="u-cf">
+        {% if page.url contains 'privacy-policy' %}
+        <div class="c-top-sub-nav-header">
+          <div class="c-top-sub-nav__heading"> <a href="{{'/privacy-policy/' | relative_url }}">Privacy Policy</a> </div>
+        </div>
+        {% elsif page.url contains 'policy' %}
+        <div class="c-top-sub-nav-header">
+          <div class="c-top-sub-nav__heading"> <a href="{{'/policy/' | relative_url }}">Beliefs</a> </div>
+        </div>
+        {% comment %} <div class="c-top-sub-nav-divider"></div>
+        <ul class="c-top-sub-nav-items">
+          <li class="c-top-sub-nav__item">
+            <a href="{{'/policy/list.html' | relative_url }}">Policies</a>
+          </li>
+        </ul> {% endcomment %}
+        {% elsif page.url contains 'about-us' or page.url contains 'people' or page.url contains 'branches' %}
+        <div class="c-top-sub-nav-header">
+          <div class="c-top-sub-nav__heading"> 
+            <a href="{{ '/about-us/' | relative_url }}">About Us </a>
+          </div>
+        </div>
+        <div class="c-top-sub-nav-divider"></div>
+        <ul class="c-top-sub-nav-items">
+          <li class="c-top-sub-nav__item">
+            <a href="{{ '/people/' | relative_url }}">Our People</a>
+          </li>
+          <li class="c-top-sub-nav__item">
+            <a href="{{ '/branches/' | relative_url }}">Our Branches</a>
+          </li>
+          <li class="c-top-sub-nav__item">
+            <a href="{{ '/about-us/constitution.html' | relative_url }}">Our Constitution</a>
+          </li>
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
+

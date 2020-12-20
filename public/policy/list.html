@@ -1,0 +1,45 @@
+---
+layout: page
+title: All our policies
+img: miscellaneous/volebni-rozcestnik.png
+rbar: ""
+---
+
+<style>
+  .program-icon {
+    width: 125px;
+    height: 125px;
+  }
+  .column {
+    margin-bottom: 0.9em;
+  }
+  .column a {
+    color: #000;
+  }
+</style>
+
+<div class="row">
+  <div class="columns medium-12">
+  <p>
+      Our policies are split into broad categories and can be browsed through below.
+    <br/></p>
+  </div>
+</div>
+
+{% assign program = site.policy %}
+<div class="row small-up-2 medium-up-3 large-up-4">
+{% for item in program %}
+<div class="column column-block">
+  <a href="{{item.url | relative_url }}">
+    <img class="program-icon" src="{{ item.img | prepend: 'assets/img/program/' | relative_url}}" alt="{{item.title}}" />
+    <h2>{{item.title}}</h2>
+  </a>
+</div>
+{% endfor %}
+</div>
+
+<div class="row" style="margin-top: 20px">
+  <div class="columns medium-12">
+  <p><!--Kapitoly obrana, doprava a místní rozvoj budou doplněny.--></p>
+  </div>
+</div>

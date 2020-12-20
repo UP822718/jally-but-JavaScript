@@ -1,0 +1,12 @@
+{% comment %}
+  Three column views:
+   týmů v /pripoj-se
+{% endcomment %}
+<div class="c-simple-accordion-content" data-tab-content="">
+  {% for item in myteams %}
+    {% assign loopindex = forloop.index | modulo: 3 %}
+    {% if loopindex == 1 %}<div class="row vspace-nb-m">{% endif %}
+    {% include team/item.html with param asitem' %}
+    {% if loopindex == 0 %}</div>{% endif %}
+  {% endfor %}
+</div>

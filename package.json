@@ -1,0 +1,35 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aspiesoft/better-json": "^0.3.6",
+    "@node-red/editor-api": "^1.2.6",
+    "@node-red/editor-client": "^1.2.6",
+    "@node-red/nodes": "^1.2.6",
+    "@node-red/registry": "^1.2.6",
+    "@node-red/runtime": "^1.2.6",
+    "@node-red/util": "^1.2.6",
+    "express": "^4.17.1",
+    "js-yaml": "^3.14.1",
+    "liquid": "^5.1.1",
+    "liquidjs": "^9.17.0",
+    "markdown-it": "^12.0.3",
+    "node-blockly": "^1.2.8",
+    "node-red": "^1.2.6",
+    "node-sass-middleware": "^0.11.0",
+    "reddit": "^1.2.1",
+    "sass": "^1.30.0",
+    "spdy": "^4.0.2",
+    "textile": "^0.0.1",
+    "walk": "^2.3.14",
+    "walker": "^1.0.7",
+    "yaml-front-matter": "^4.1.1"
+  }
+}

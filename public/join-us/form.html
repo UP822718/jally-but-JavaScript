@@ -1,0 +1,75 @@
+
+<form action='' name='registration'>
+
+  <div class="row">
+    <div class="medium-6 small-12 columns">
+
+      <label>
+        Position
+        <select name='rank' id='rank' class='form-control'>
+          <option value='subscriber'>Subscriber</option>
+          <option value='supporter'>Supporter</option>
+          <option value='wannabemember'>Membership</option>
+        </select>
+      </label>
+
+      <label>Name
+        <input type='text' name='name' id='name' placeholder='Name'/>
+      </label>
+
+    </div>
+
+    <div class="medium-6 small-12 columns">
+
+      <label for='email'>Email
+        <input type='email' name='email' id='email' placeholder='john@doe.com'/>
+      </label>
+
+      <label for='phone'>Telephone
+        <input type='text' name='phone' id='phone' placeholder='777111222'/>
+      </label>
+
+      <label for='psc' id='psccontainer'>Postcode
+        <input type='text' name='psc' class="typeahead" placeholder='SW1A 0AA'/>
+      </label>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-12 small-12 columns">
+
+      <fieldset class="fieldset">
+        <legend>I'm willing to help with</legend>
+
+        <input id='ch1' type="checkbox" name='canhelp' value='it'>
+        <label for='ch1'>IT/web</label>
+
+        <input id='ch2' type="checkbox" name='canhelp' value='graphics'>
+        <label for='ch2'>Graphics</label>
+
+        <input id='ch3' type="checkbox" name='canhelp' value='media'>
+        <label for='ch3'>Media</label>
+
+        <input id='ch4' type="checkbox" name='canhelp' value='finance'>
+        <label for='ch4'>Finance</label>
+
+        <input id='ch5' type="checkbox" name='canhelp' value='video'>
+        <label for='ch5'>Video processing</label>
+
+        <input id='ch6' type="checkbox" name='canhelp' value='administration'>
+        <label for='ch6'>Administration</label>
+
+        <input id='ch7' type="checkbox" name='canhelp' value='campaigns'>
+        <label for='ch7'>Campaigns</label>
+
+        <input id='ch8' type="checkbox" name='canhelp' value='research'>
+        <label for='ch8'>Research</label>
+
+      </fieldset>
+    </div>
+  </div>
+
+  <button type='submit' class='success button'>Register</button>
+
+</form>
