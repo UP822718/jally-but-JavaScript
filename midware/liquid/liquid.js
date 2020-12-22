@@ -25,7 +25,7 @@ function htmlLoadFilePass(filePath, req, res, config, root) {
 	return html_pass(data, req, res, config, root);
 }
 
-function html_pass(data, req, res, config, root) {
+function html_pass_and_send(data, req, res, config, root) {
 	let engine = new Liquid({
 		globals: data,
 		fs: {
@@ -105,5 +105,5 @@ function html_pass(data, req, res, config, root) {
 }
 
 exports.htmlLoadFilePass = htmlLoadFilePass;
-exports.htmlPass = html_pass;
-exports.html_pass = html_pass;
+exports.htmlPass = html_pass_and_send;
+exports.html_pass = html_pass_and_send;
