@@ -26,9 +26,6 @@ function htmlLoadFilePass(filePath, req, res, config, root) {
 }
 
 function html_pass(data, req, res, config, root) {
-	console.log(data);
-	console.log(data);
-	console.log(data);
 	let engine = new Liquid({
 		globals: data,
 		fs: {
@@ -41,7 +38,7 @@ function html_pass(data, req, res, config, root) {
 						data["__content"] = `{% layout \'${data.layout}.html\' %}\n` + data["__content"];
 					}
 
-					data["__content"] = rewite_includes.rewriteIncludes(data["__content"]);
+				//	data["__content"] = rewite_includes.rewriteIncludes(data["__content"]);
 					return data["__content"];
 				} catch (e) {
 					console.log(e);
@@ -57,7 +54,7 @@ function html_pass(data, req, res, config, root) {
 					//data["__content"] = `{% layout \'${data.page.layout}.html\' %}` + data["__content"];
 					data["__content"] = `{% layout \'${data.page.layout}.html\' %}\n` + data["__content"];
 				}
-				data["__content"] = rewite_includes.rewriteIncludes(data["__content"]);
+				//data["__content"] = rewite_includes.rewriteIncludes(data["__content"]);
 				return data["__content"];
 			},
 			existsSync: function() {
@@ -69,12 +66,8 @@ function html_pass(data, req, res, config, root) {
 			resolve: function(root, file, ext) {
 				let _includes = path.resolve(root, "_includes/", file);
 				let _layouts = path.resolve(root, "_layouts", file);
-				console.log(_includes);
-				console.log(_includes);
 				let other = path.resolve(root, file);
 				if (fs.existsSync(_includes)) {
-					console.log(_includes);
-					console.log(_includes);
 					return _includes;
 				} else if (fs.existsSync(_layouts)) {
 					return _layouts;

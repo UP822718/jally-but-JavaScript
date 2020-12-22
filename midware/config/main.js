@@ -1,7 +1,6 @@
 const fs = require("fs");
 const yaml = require('js-yaml');
 const yamlFront = require('yaml-front-matter');
-const walk = require('walk')
 const path = require('path');
 var express = require('express')
 
