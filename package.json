@@ -16,6 +16,7 @@
     "markdown-it": "^12.0.3",
     "node-blockly": "^1.2.8",
     "node-sass-middleware": "^0.11.0",
+    "python-shell": "^2.0.3",
     "sass": "^1.30.0",
     "textile": "^0.0.1",
     "yaml-front-matter": "^4.1.1"

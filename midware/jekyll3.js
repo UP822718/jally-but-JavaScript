@@ -13,12 +13,24 @@ var MarkdownIt = require('markdown-it');
 
 
 
+/**
+ * setup - the website with jekyl like  things
+ *
+ * @param  {exprees.app} app        Exprees
+ * @param  {str} root = "." root of the jekyl website
+ */
 function setup(app, root = ".") {
 	const config = new conf.config(root, app);
 	let coll = [];
 
 
 
+	/**
+	 * makeCollection - make all the collection
+	 *
+	 * @param  {type} collection description
+	 * @return {type}            description
+	 */
 	function makeCollection(collection) {
 		console.log('setup_collections->path:' + config.collections[collection].permalink);
 		app.use(config.collections[collection].permalink, function(req, res, next) {

@@ -8,6 +8,16 @@ const {
 	Liquid
 } = require('liquidjs');
 
+/**
+ * htmlLoadFilePass - description
+ *
+ * @param  {type} filePath description
+ * @param  {type} req      description
+ * @param  {type} res      description
+ * @param  {type} config   description
+ * @param  {type} root     description
+ * @return {type}          description
+ */
 function htmlLoadFilePass(filePath, req, res, config, root) {
 	//console.log(filePath);
 	if (path.extname(filePath) == "") {
@@ -25,6 +35,16 @@ function htmlLoadFilePass(filePath, req, res, config, root) {
 	return html_pass(data, req, res, config, root);
 }
 
+/**
+ * html_pass - description
+ *
+ * @param  {type} data   description
+ * @param  {type} req    description
+ * @param  {type} res    description
+ * @param  {type} config description
+ * @param  {type} root   description
+ * @return {type}        description
+ */
 function html_pass(data, req, res, config, root) {
 	let engine = new Liquid({
 		globals: data,

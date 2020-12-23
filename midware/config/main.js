@@ -251,6 +251,14 @@ class Config {
 			//	let markdown = fs.readFileSync(path.join(this.root, post_fs_dir), 'utf8');
 		}
 	}
+
+	/**
+	 * pass_yaml_frontmatt - load frunt matter and other website data
+	 *
+	 * @param  {string} data         input to be passed
+	 * @param  {string} pathfs = "/"  URL Path
+	 * @return {data}              return the website/page data
+	 */
 	pass_yaml_frontmatt(data, pathfs = "/") {
 		for (var default_ in this.defaults) {
 			if (isSubDirectory("/" + default_, pathfs)) {
