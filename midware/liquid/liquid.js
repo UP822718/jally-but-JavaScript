@@ -34,7 +34,7 @@ function html_pass_and_send(data, req, res, config, root) {
 					let data = fs.readFileSync(file, 'utf8');
 					data = yamlFront.loadFront(data);
 					if (data.layout) {
-						data["__content"] = `{% layout \'${data.layout}.html\' %}\n` + data["__content"];
+						data["__content"] = `{% render \'${data.layout}.html\' %}\n` + data["__content"];
 					}
 
 					return data["__content"];
