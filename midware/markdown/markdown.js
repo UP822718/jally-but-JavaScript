@@ -8,6 +8,16 @@ const path = require('path');
 
 
 
+/**
+ * markdown_fs - description
+ *
+ * @param  {type} filePath description
+ * @param  {type} req      description
+ * @param  {type} res      description
+ * @param  {type} config   description
+ * @param  {type} root     description
+ * @return {type}          description
+ */
 function markdown_fs(filePath, req, res, config, root) {
 	if (!fs.existsSync(filePath)) {
 		if (fs.existsSync(path.join(filePath, "index.md"))) {
@@ -24,6 +34,16 @@ function markdown_fs(filePath, req, res, config, root) {
 	return markdown_pass(data, req, res, config, root);
 }
 
+/**
+ * markdown_pass - description
+ *
+ * @param  {type} data   description
+ * @param  {type} req    description
+ * @param  {type} res    description
+ * @param  {type} config description
+ * @param  {type} root   description
+ * @return {type}        description
+ */
 function markdown_pass(data, req, res, config, root) {
 	data = config.pass_yaml_frontmatt(data, req.path);
 	console.log(data);

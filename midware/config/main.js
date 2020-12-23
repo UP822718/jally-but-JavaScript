@@ -4,11 +4,27 @@ const yamlFront = require('yaml-front-matter');
 const path = require('path');
 var express = require('express')
 
+/**
+ * isSubDirectory - description
+ *
+ * @param  {type} parent description
+ * @param  {type} child  description
+ * @return {type}        description
+ */
 function isSubDirectory(parent, child) {
 	return !path.relative(parent, child).startsWith('..');
 }
 
 class Defaults {
+
+	/**
+	 * constructor - description
+	 *
+	 * @param  {string} path      description
+	 * @param  {type} values    description
+	 * @param  {type} root_path description
+	 * @return {type}           description
+	 */
 	constructor(path, values, root_path) {
 		this.router = express.Router()
 		router.get('/' + path, function(req, res, next) {
@@ -31,6 +47,14 @@ class Defaults {
 }
 
 class Config {
+
+	/**
+	 * constructor - description
+	 *
+	 * @param  {type} root = "." description
+	 * @param  {type} app        description
+	 * @return {type}            description
+	 */
 	constructor(root = ".", app) {
 		this.root = root;
 		this.collections = {}
@@ -38,6 +62,14 @@ class Config {
 		this.reload(app, root)
 
 	}
+
+	/**
+	 * reload - description
+	 *
+	 * @param  {type} app  description
+	 * @param  {type} root description
+	 * @return {type}      description
+	 */
 	reload(app, root) {
 		this.posts = {};
 
@@ -251,6 +283,14 @@ class Config {
 			//	let markdown = fs.readFileSync(path.join(this.root, post_fs_dir), 'utf8');
 		}
 	}
+
+	/**
+	 * pass_yaml_frontmatt - description
+	 *
+	 * @param  {type} data         description
+	 * @param  {type} pathfs = "/" description
+	 * @return {type}              description
+	 */
 	pass_yaml_frontmatt(data, pathfs = "/") {
 		for (var default_ in this.defaults) {
 			if (isSubDirectory("/" + default_, pathfs)) {

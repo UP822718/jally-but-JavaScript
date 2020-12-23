@@ -13,12 +13,25 @@ var MarkdownIt = require('markdown-it');
 
 
 
+/**
+ * setup - description
+ *
+ * @param  {type} app        description
+ * @param  {type} root = "." description
+ * @return {type}            description
+ */
 function setup(app, root = ".") {
 	const config = new conf.config(root, app);
 	let coll = [];
 
 
 
+	/**
+	 * makeCollection - description
+	 *
+	 * @param  {type} collection descriptionf
+	 * @return {type}            description
+	 */
 	function makeCollection(collection) {
 		console.log('setup_collections->path:' + config.collections[collection].permalink);
 		app.use(config.collections[collection].permalink, function(req, res, next) {

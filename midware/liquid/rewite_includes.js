@@ -19,6 +19,13 @@ function rewriteIncludes (text) {
     return `{% unbind %}${text}`;
 };
 
+/**
+ * const rewriteTag - description
+ *
+ * @param  {type} token description
+ * @param  {type} src   description
+ * @return {type}       description
+ */
 const rewriteTag = function(token, src) {
   let raw = token.getText();
   let length = raw.length;

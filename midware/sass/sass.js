@@ -4,6 +4,18 @@ const conf = require("../config/main.js");
 const fs = require("fs");
 const yaml = require('js-yaml');
 const path = require('path');
+
+
+
+/**
+ * css - Load CCS
+ *
+ * @param  {type} root  description
+ * @param  {type} path_ description
+ * @param  {type} req   description
+ * @param  {type} res   description
+ * @return {type}       description
+ */
 function css(root, path_, req, res) {
 	let filePath = decodeURIComponent(path_);
 	if (path.extname(filePath) != ".css") {

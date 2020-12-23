@@ -4,10 +4,9 @@ const fs = require("fs");
 const path = require('path');
 const rewite_includes = require('./rewite_includes.js');
 const yaml = require('js-yaml');
-const {
-	Liquid
-} = require('liquidjs');
+var { Liquid } = require('liquidjs');
 
+console.log(Liquid);
 function htmlLoadFilePass(filePath, req, res, config, root) {
 	//console.log(filePath);
 	if (path.extname(filePath) == "") {
@@ -22,7 +21,7 @@ function htmlLoadFilePass(filePath, req, res, config, root) {
 	}
 	let data = fs.readFileSync(filePath, 'utf8');
 	data = config.pass_yaml_frontmatt(data, req.path);
-	return html_pass(data, req, res, config, root);
+	return html_pass_and_send(data, req, res, config, root);
 }
 
 function html_pass_and_send(data, req, res, config, root) {
@@ -38,7 +37,6 @@ function html_pass_and_send(data, req, res, config, root) {
 						data["__content"] = `{% layout \'${data.layout}.html\' %}\n` + data["__content"];
 					}
 
-				//	data["__content"] = rewite_includes.rewriteIncludes(data["__content"]);
 					return data["__content"];
 				} catch (e) {
 					console.log(e);
@@ -51,11 +49,8 @@ function html_pass_and_send(data, req, res, config, root) {
 				let data = fs.readFileSync(file, 'utf8');
 				data = yamlFront.loadFront(data);
 				if (data.page.layout) {
-					//data["__content"] = `{% layout \'${data.page.layout}.html\' %}` + data["__content"];
 					data["__content"] = `{% layout \'${data.page.layout}.html\' %}\n` + data["__content"];
 				}
-				//data["__content"] = rewite_includes.rewriteIncludes(data["__content"]);
-				return data["__content"];
 			},
 			existsSync: function() {
 				return true
@@ -98,7 +93,7 @@ function html_pass_and_send(data, req, res, config, root) {
 	if (data.page.layout) {
 		html_ = `{% layout \'${data.page.layout}.html\' %}\n` + html_;
 	}
-	html_ = engine.parseAndRenderSync(html_,{});
+	html_ = engine.parseAndRenderSync(html_, {});
 	res.send(html_);
 	console.log(data.page);
 	return true;
