@@ -4,9 +4,12 @@ const fs = require("fs");
 const path = require('path');
 const rewite_includes = require('./rewite_includes.js');
 const yaml = require('js-yaml');
-var { Liquid } = require('liquidjs');
+var {
+	Liquid
+} = require('liquidjs');
 
 console.log(Liquid);
+
 function htmlLoadFilePass(filePath, req, res, config, root) {
 	//console.log(filePath);
 	if (path.extname(filePath) == "") {
@@ -21,10 +24,12 @@ function htmlLoadFilePass(filePath, req, res, config, root) {
 	}
 	let data = fs.readFileSync(filePath, 'utf8');
 	data = config.pass_yaml_frontmatt(data, req.path);
-	return html_pass_and_send(data, req, res, config, root);
+	let content = data["content"]
+	return html_pass_and_send(data, req, res, config, root, content);
 }
 
-function html_pass_and_send(data, req, res, config, root) {
+function html_pass_and_send(data, req, res, config, root, content) {
+	console.log(data);
 	let engine = new Liquid({
 		globals: data,
 		fs: {
@@ -89,12 +94,12 @@ function html_pass_and_send(data, req, res, config, root) {
 	engine.plugin(require('./tags/svelte.js'));
 	engine.plugin(require('./tags/feed_meta.js')); //feed_meta
 	engine.plugin(require('./tags/unbind.js'));
-	let html_ = data["content"];
+
 	if (data.page.layout) {
-		html_ = `{% layout \'${data.page.layout}.html\' %}\n` + html_;
+		content = `{% layout \'${data.page.layout}.html\' %}\n` + content;
 	}
-	html_ = engine.parseAndRenderSync(html_, {});
-	res.send(html_);
+	content = engine.parseAndRenderSync(content, {});
+	res.send(content);
 	console.log(data.page);
 	return true;
 }

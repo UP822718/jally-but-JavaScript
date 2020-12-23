@@ -47,10 +47,10 @@ function markdown_fs(filePath, req, res, config, root) {
 function markdown_pass(data, req, res, config, root) {
 	data = config.pass_yaml_frontmatt(data, req.path);
 	let md = new MarkdownIt();
-	data.content = md.render(data.content);
-	console.log(data);
+	let content = md.render(data.content);
+	console.log(content);
 
-	return html.htmlPass(data, req, res, config, root);
+	return html.htmlPass(data, req, res, config, root,content);
 
 }
 exports.markdown_pass = markdown_pass;

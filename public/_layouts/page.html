@@ -2,9 +2,9 @@
 layout: default
 ---
 
-{%unless page.nomenu%}
+{%if page.nomenu%}
 {% include "submenu.html" %}
-{% endunless%}
+{% endif%}
 <div class="row">
   <div class="medium-12 {% if page.rbar == empty %}large-12{% else%}large-8{%endif%} columns">
     <div class="o-section o-section--spaceBot">
@@ -121,9 +121,9 @@ layout: default
       </div>
     </div>
   </div>
-  {% unless page.rbar == blank %}
+  {% if page.rbar == blank %}
   <div class="medium-12 large-4 columns">
     {% include "right-bar/rbar.html" %}
   </div>
-  {% endunless %}
+  {% endif %}
 </div>
