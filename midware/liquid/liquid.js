@@ -37,12 +37,7 @@ function html_pass_and_send(data, req, res, config, root, content) {
 				console.log(file);
 				try {
 					let data = fs.readFileSync(file, 'utf8');
-					data = yamlFront.loadFront(data);
-					if (data.layout) {
-						data["__content"] = `{% render \'${data.layout}.html\' %}\n` + data["__content"];
-					}
-
-					return data["__content"];
+					return data;
 				} catch (e) {
 					console.log(e);
 				} finally {
@@ -51,11 +46,16 @@ function html_pass_and_send(data, req, res, config, root, content) {
 				return "";
 			},
 			readFile: async function(file) {
-				let data = fs.readFileSync(file, 'utf8');
-				data = yamlFront.loadFront(data);
-				if (data.page.layout) {
-					data["__content"] = `{% layout \'${data.page.layout}.html\' %}\n` + data["__content"];
+				console.log(file);
+				try {
+					let data = fs.readFileSync(file, 'utf8');
+					return data;
+				} catch (e) {
+					console.log(e);
+				} finally {
+
 				}
+				return "";
 			},
 			existsSync: function() {
 				return true

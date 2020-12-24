@@ -34,7 +34,7 @@
 							{% if main.mail %}<i class="fa fa-envelope-o"></i> <a href="mailto:{{main.mail}}">{{main.mail}}</a><br/>{% endif %}
 							{% if main.tel %}<i class="fa fa-phone"></i> {{ main.tel }}<br/>{% endif %}
                						</p>
-              						{% endfor %} 
+              						{% endfor %}
 						{% endif %}
 
 						{% if page.office %}
@@ -61,7 +61,7 @@
 						{% if page.mail %}<i class="fa fa-envelope-o"></i> <a href="mailto:{{ page.mail | first}}">{{ page.mail | first}}</a><br/>{% endif %}
 						{% if page.mob %}<i class="fa fa-phone"></i> {{ page.mob }}<br/>{% endif %}
 						{% endif %}
-						{% include right-bar/rbar_profiles.html %}
+						{% render right-bar/rbar_profiles.html %}
 					{% endif %}
         </div>
       </div>
